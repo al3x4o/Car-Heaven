@@ -13,7 +13,9 @@
                 <!-- car model -->
                 <p><span class="description">Model:{{ car.model }}</span></p>
                 <!-- car year -->
-                <p><span class="description">Max Speed: {{ car.description }} km/h</span></p>
+                {% if car.speed %}
+                    <p><span class="description">Max Speed: {{ car.speed }} km/h</span></p>
+                {% endif %}
                 <p><span class="description">Year: {{ car.year }}</span></p>
 
                 <!-- car price -->

@@ -62,6 +62,8 @@ class Profile(models.Model):
 class Car(models.Model):
     MAX_TYPE_LEN = 10
     MAX_SPEED_LEN = 10
+    MAX_SPEED = 500
+    MIN_SPEED = 1
     MAX_MODEL_LEN = 20
     MIN_MODEL_LEN = 2
     MIN_PRICE = 1
@@ -101,6 +103,10 @@ class Car(models.Model):
         blank=True,
         null=True,
         max_length=MAX_SPEED_LEN,
+        validators=(
+            validators.MaxValueValidator(MAX_SPEED),
+            validators.MinValueValidator(MIN_SPEED),
+        )
     )
 
     year = models.IntegerField(
