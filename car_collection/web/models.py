@@ -4,6 +4,7 @@ from django.db import models
 
 class Profile(models.Model):
     MIN_USERNAME_LEN = 2
+    MAX_USERNAME_LEN = 15
 
     MIN_AGE = 18
     MAX_PASSWORD_LEN = 30
@@ -12,7 +13,7 @@ class Profile(models.Model):
     MAX_LASTNAME_LEN = 30
 
     username = models.CharField(
-        max_length=10,
+        max_length=MAX_USERNAME_LEN,
         blank=False,
         null=False,
         validators=(
@@ -60,6 +61,7 @@ class Profile(models.Model):
 
 class Car(models.Model):
     MAX_TYPE_LEN = 10
+    MAX_SPEED_LEN = 10
     MAX_MODEL_LEN = 20
     MIN_MODEL_LEN = 2
     MIN_PRICE = 1
@@ -94,6 +96,11 @@ class Car(models.Model):
         validators=(
             validators.MinLengthValidator(MIN_MODEL_LEN),
         )
+    )
+    speed = models.IntegerField(
+        blank=True,
+        null=True,
+        max_length=MAX_SPEED_LEN,
     )
 
     year = models.IntegerField(

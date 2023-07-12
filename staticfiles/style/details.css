@@ -80,6 +80,7 @@ body {
 .description {
     font-size: 25px;
     color: #E2E8EA;
+    text-align: center;
 }
 
 .car-img {
