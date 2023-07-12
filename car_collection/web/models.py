@@ -102,7 +102,6 @@ class Car(models.Model):
     speed = models.IntegerField(
         blank=True,
         null=True,
-        max_length=MAX_SPEED_LEN,
         validators=(
             validators.MaxValueValidator(MAX_SPEED),
             validators.MinValueValidator(MIN_SPEED),
