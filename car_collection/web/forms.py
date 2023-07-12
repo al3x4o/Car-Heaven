@@ -1,4 +1,5 @@
 from django import forms
+from django.forms import PasswordInput, TextInput, NumberInput
 
 from car_collection.web.models import Profile, Car
 
@@ -7,6 +8,20 @@ class ProfileCreateForm(forms.ModelForm):
     class Meta:
         model = Profile
         fields = ('username','first_name', 'last_name', 'email', 'age', 'password')
+        labels = {
+            "username": "Username",
+            "last_name": "Last Name",
+            "password": "Password",
+        }
+        widgets = {
+            "username": TextInput(attrs={'placeholder': 'username', 'autocomplete': 'off'}),
+            "first_name": TextInput(attrs={'placeholder': 'First Name', 'autocomplete': 'off'}),
+            "last_name": TextInput(attrs={'placeholder': 'Last Name(Optional)', 'autocomplete': 'off'}),
+            "email": TextInput(attrs={'placeholder': 'Email', 'autocomplete': 'off'}),
+            "age": NumberInput(attrs={'placeholder': 'Age', 'autocomplete': 'off'}),
+            "password": PasswordInput(
+                attrs={'placeholder': '********', 'autocomplete': 'off', 'data-toggle': 'password'}),
+        }
 
 
 class ProfileEditForm(forms.ModelForm):
