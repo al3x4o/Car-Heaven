@@ -1,4 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel&family=Monoton&display=swap');
+
+body {
+    background: #060c21;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
 #car-details {
     position: relative;
     display: block;
@@ -7,18 +14,17 @@
     overflow: hidden;
     border-radius: 10px;
     transition: all 0.4s;
-
+    transform-style: preserve-3d;
 }
 
-#car-details>h1 {
+#car-details > h1 {
     letter-spacing: 10px;
     font-family: 'Cinzel', serif;
-    color: white;
+    color: #E2E8EA;
     font-size: 55px;
     font-weight: 600;
     margin-bottom: 40px;
     text-transform: uppercase;
-    text-align: center;
 }
 
 .info-section {
@@ -41,7 +47,7 @@
     height: 40%;
 }
 
-.car-header>h1 {
+.car-header > h1 {
     color: #E2E8EA;
     margin-top: 5px;
     font-size: 36px;
@@ -49,7 +55,7 @@
     text-transform: uppercase;
 }
 
-.car-header>h4 {
+.car-header > h4 {
     color: #E2E8EA;
     font-size: 23px;
     font-weight: 400;
@@ -64,7 +70,8 @@
     background-color: #b4b6ee;
     border: 1px solid rgba(218, 181, 181, 0.829);
 }
-.info-section>.description {
+
+.info-section > .description {
     margin-top: 30px;
     padding: 60px;
     height: 50%;
@@ -86,7 +93,6 @@
     box-shadow: 0 0 20px -10px rgba(0, 0, 0, 0.5);
 }
 
-
 .buttons {
     height: 10%;
     text-align: right;
@@ -94,26 +100,29 @@
     padding-bottom: 40px;
     transition: 0.5s;
     transition-property: box-shadow;
-
 }
 
-.edit-button, .delete-button {
+.edit-button,
+.delete-button {
     height: 15%;
     padding: 14px;
     margin-top: auto;
     font-size: 21px;
-    color: rgb(255, 255, 255);
-    box-shadow: 0 0 25px white;
-    border-radius: 20px;
-}
-.edit-button{
-    background: #3387C7;
+    color: #FFF;
+    box-shadow: 0 0 3px white;
+    border-radius: 10px;
 }
 
-.delete-button{
-    background: red;
+.edit-button {
+    background: #b7b8b9;
 }
 
-.edit-button:hover, .delete-button:hover {
-    box-shadow: 0 0 100px white;
+.delete-button {
+    background: #FF0000;
 }
+
+.edit-button:hover,
+.delete-button:hover {
+    box-shadow: 0 0 10px white;
+}
+

@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Monoton&display=swap');
+
 html {
     font-family: Arial, sans-serif;
     font-size: 16px;
     box-sizing: border-box;
 }
-
 
 *,
 *::before,
@@ -14,7 +14,6 @@ html {
     box-sizing: inherit;
     line-height: 1.3;
 }
-
 
 h1,
 h2,
@@ -45,6 +44,7 @@ button {
     border: 1px solid white;
     border-radius: 0.3em;
     background-color: transparent;
+    transition: box-shadow 0.3s ease;
 }
 
 a {
@@ -52,6 +52,7 @@ a {
     text-decoration: none;
     font-weight: bold;
     color: inherit;
+    transition: color 0.3s ease;
 }
 
 #index-headline {
@@ -73,14 +74,26 @@ a {
     width: 30%
 }
 
-.index-message>h2{
+.index-message > h2 {
     position: relative;
     font-size: 50px;
     left: 180px;
     top: 20px;
+    animation: fade-in 0.5s ease forwards;
 }
 
-#index-headline>img {
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#index-headline > img {
     height: auto;
     display: inline-block;
     vertical-align: middle;
@@ -89,7 +102,7 @@ a {
 }
 
 .index-message h2 {
-    color: wheat;
+    color: #b7b8b9;
     font-size: 300%;
     line-height: 1;
     font-weight: 700;
@@ -101,33 +114,39 @@ a {
     font-family: 'Monoton', cursive;
 }
 
-.index-message h2>span {
-    color: #3387C7;
+#index-headline .index-message h2 > span {
+    color: #c23232;
 }
 
-#catalogue>h1{
+#catalogue > h1 {
     text-align: center;
-    color: #134062;
+    color: #c23232;
     text-transform: uppercase;
     padding: 20px;
     font-family: 'Cinzel', serif;
     letter-spacing: 15px;
+    animation: slide-in-bottom 0.5s ease forwards;
+}
+
+@keyframes slide-in-bottom {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .car-card {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+    background: #333;
+    border-radius: 15px;
     margin-top: 20px;
     padding: 50px;
     margin-left: 50px;
-    background-position: right 35% bottom 45%;
     box-sizing: border-box;
-    border-radius: 15px;
-    float: left;
-    height: auto;
+    animation: fade-in 0.5s ease forwards;
 }
 
 .image-wrap {
@@ -140,16 +159,17 @@ a {
     text-align: center;
 }
 
-.image-wrap>img {
+.image-wrap > img {
     max-width: 100%;
     height: 100%;
 }
 
-.details-buttons{
+.details-buttons {
     text-align: center;
     margin-top: 50px;
 }
-.details-btn{
+
+.details-btn {
     color: #fff;
     border: none;
     margin: 20px;
@@ -158,21 +178,19 @@ a {
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 4px;
-    cursive: pointer;
+    cursor: pointer;
     border-radius: 20px;
     transition: 0.5s;
     transition-property: box-shadow;
-}
-
-.details-btn{
-    background: #3387C7;
+    background: #C03737;
     box-shadow: 0 0 5px white;
 }
 
-.details-btn:hover{
+.details-btn:hover {
     box-shadow: 0 0 10px white;
 }
-.car-card>h3 {
+
+.car-card > h3 {
     font-family: "Agency FB", serif;
     font-size: 42px;
     font-weight: 700;
@@ -183,20 +201,16 @@ a {
     transition: all 0.5s ease-out;
     text-align: center;
     text-transform: uppercase;
+    color: #E2E8EA;
 }
-.car-card>h3,
-.car-card>h1{
+
+.car-card > h1 {
+    font-size: 15px;
     color: #E2E8EA;
     text-align: center;
 }
 
-.car-card>h1{
-    font-size: 15px;
-}
-
-
-
-#home-page>h1 {
+#home-page > h1 {
     color: rgb(252, 168, 151);
     text-align: center;
     font-weight: 700;
